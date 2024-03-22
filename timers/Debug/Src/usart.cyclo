@@ -1,0 +1,5 @@
+../Src/usart.c:11:5:__io__putchar	1
+../Src/usart.c:17:6:uart3_Rx_init	1
+../Src/usart.c:51:6:uart3_tx_init	1
+../Src/usart.c:81:15:usart3_read	2
+../Src/usart.c:89:6:uart3_write	2

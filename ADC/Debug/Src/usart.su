@@ -3,3 +3,4 @@
 ../Src/usart.c:51:6:uart3_tx_init	4	static
 ../Src/usart.c:81:15:usart3_read	4	static
 ../Src/usart.c:89:6:uart3_write	16	static
+../Src/usart.c:97:6:uart3_ADC_Write	16	static

@@ -16,6 +16,7 @@ void uart3_tx_init(void);
 void uart3_write(unsigned char x);
 unsigned char usart3_read(void);
 void uart3_Rx_init(void);
+void uart3_ADC_Write(uint32_t x);
 
 
 #define GPIOA_EN         (1U<<0)

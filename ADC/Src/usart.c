@@ -94,5 +94,9 @@ void uart3_write(unsigned char x)
 
 }
 
-
+void uart3_ADC_Write(uint32_t x)
+{
+	USART3->TDR =(x);
+	while(!(USART3->ISR & USART_ISR_TC)){;};
+}
 

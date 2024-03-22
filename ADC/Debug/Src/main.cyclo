@@ -1,2 +1,2 @@
-../Src/main.c:33:5:main	2
-../Src/main.c:53:6:blue_led_setup	1
+../Src/main.c:33:5:main	1
+../Src/main.c:65:6:blue_led_setup	1

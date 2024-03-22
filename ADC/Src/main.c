@@ -17,7 +17,7 @@
  */
 #include <stdio.h>
 #include "usart.h"
-
+#include "ADC.h"
 
 #define GPIOBEN  (1U<<1)
 #define GPIOB_7  (1U<<7)
@@ -25,30 +25,42 @@
 
 void blue_led_setup(void);
 
-
+volatile int adc_value;
 char key;
 
-
+uint32_t sensor_value = 0x00;
 
 int main(void)
 {
 	uart3_tx_init();
 	uart3_Rx_init();
 	blue_led_setup();
+//	pa1_adc_init();
+//	start_adc_conversion();
+
+	ADC1->CR1|=ADC_CR1_EOCIE;
 	while (1)
 	{
-		key = usart3_read();
-		if(key == '1')
-		{
-			GPIOB->ODR |= blue_led;
-		}
-		else
-		{
-			GPIOB->ODR &=~blue_led;
-		}
-		uart3_write(key);
+//		key = usart3_read();
+//		if(key == '1')
+//		{
+//			GPIOB->ODR |= blue_led;
+//		}
+//		else
+//		{
+//			GPIOB->ODR &=~blue_led;
+//		}
+//		uart3_write(key);
+		uart3_ADC_Write(sensor_value);
+    	sensor_value = adc_read();
+
+
+
+
 	}
 }
+
+
 
 void blue_led_setup(void)
 {
